@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface OTPRepo extends JpaRepository<OTP, Long> {
     List<OTP> findByRepresentative(Representative representative_id);
-    List<OTP> findByRepresentativeOrderByRequest_date(Representative representative_id);
-    OTP findByOtp(String otp);
+    List<OTP> findByRepresentativeOrderByRequestDate(Representative representative_id);
+    //OTP findByOtp(String otp);
 }

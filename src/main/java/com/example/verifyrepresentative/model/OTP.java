@@ -13,8 +13,8 @@ public class OTP {
     @Column(name = "otp")
     private String otp;
 
-    @Column(name = "request_date")
-    private Date request_date;
+    @Column(name = "requestDate")
+    private Date requestDate;
 
     @ManyToOne
     @JoinColumn(name = "representative")
@@ -37,12 +37,12 @@ public class OTP {
         this.otp = otp;
     }
 
-    public Date getRequest_date() {
-        return request_date;
+    public Date getRequestDate() {
+        return requestDate;
     }
 
-    public void setRequest_date(Date request_date) {
-        this.request_date = request_date;
+    public void setRequestDate(Date requestDate) {
+        this.requestDate = requestDate;
     }
 
     public Representative getRepresentative() {
