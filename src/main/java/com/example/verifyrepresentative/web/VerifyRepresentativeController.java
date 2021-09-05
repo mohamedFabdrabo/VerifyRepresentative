@@ -36,12 +36,18 @@ public class VerifyRepresentativeController {
     {
         Representative representative = service.getRepresentativeByPhone(request.getServiceRefNumber());
         if(representative==null)
+        {
+            logger.error("Invalid Generation : Phone number not found");
             throw new RecordNotFoundException("Invalid Number");
+        }
 
         // Generates OTP and links OTP to representative in database
         ResponseDto<OTP> smsresponse = service.sendOtpToMobMerchant(representative.getPhoneNumber());
         if(smsresponse.getStatus().getCode().equals("400"))
+        {
+            logger.error("SMS Not : Phone number not found");
             throw new RecordNotFoundException("Message Not Sent");
+        }
         OTP new_otp = smsresponse.getData();
 
         // create Response

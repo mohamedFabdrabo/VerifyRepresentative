@@ -111,7 +111,7 @@ public class VerifyRepresentativeService {
             OTPRepository.save(new_otp);
 
             responseDto.setData(new_otp);
-
+            LOGGER.info("new OTP generated with value+:"+code);
             return responseDto;
         }
 
