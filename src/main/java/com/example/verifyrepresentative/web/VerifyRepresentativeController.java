@@ -37,19 +37,12 @@ public class VerifyRepresentativeController {
         Representative representative = service.getRepresentativeByPhone(request.getServiceRefNumber());
         if(representative==null)
             throw new RecordNotFoundException("Invalid Number");
-        /*{
-            StatusDTO status = new StatusDTO();
-            status.setCode("1");
-            status.setMessage("Invalid Reference Number");
-            Date date = new Date();
 
-            InquiryResponseDTO response = new InquiryResponseDTO();
-            response.setStatus(status);
-            response.setResponseDate(date);
-            return new ResponseEntity<InquiryResponseDTO>(response, new HttpHeaders(), HttpStatus.OK);
-        }*/
         // Generates OTP and links OTP to representative in database
-        OTP new_otp = service.GenerateOTP(representative);
+        ResponseDto<OTP> smsresponse = service.sendOtpToMobMerchant(representative.getPhoneNumber());
+        if(smsresponse.getStatus().getCode().equals("400"))
+            throw new RecordNotFoundException("Message Not Sent");
+        OTP new_otp = smsresponse.getData();
 
         // create Response
         StatusDTO status = new StatusDTO();
@@ -69,17 +62,7 @@ public class VerifyRepresentativeController {
         Representative representative = service.getRepresentativeByPhone(request.getServiceRefNumber());
         if(representative==null)
             throw new RecordNotFoundException("Invalid Number");
-        /*{
-            StatusDTO status = new StatusDTO();
-            status.setCode("1");
-            status.setMessage("Invalid Reference Number");
-            Date date = new Date();
 
-            InquiryResponseDTO response = new InquiryResponseDTO();
-            response.setStatus(status);
-            response.setResponseDate(date);
-            return new ResponseEntity<InquiryResponseDTO>(response, new HttpHeaders(), HttpStatus.OK);
-        }*/
         String inputOTP = request.getInquiryAttributes().get(0).getValue();
         OTP OTP = service.getRecentOTPForRepresentative(representative);
         String ActualOTP = OTP.getOtp();
@@ -90,10 +73,22 @@ public class VerifyRepresentativeController {
         InquiryResponseDTO response = new InquiryResponseDTO();
         if(success)
         {
+            Date d1 = OTP.getRequestDate();
+            Date d2 = new Date();
+            long difference_In_Time = d2.getTime() - d1.getTime();
+            long difference_In_Minutes = (difference_In_Time / (1000 * 60));
+
             StatusDTO status = new StatusDTO();
-            status.setCode("0");
-            status.setMessage("Correct OTP");
             Date date = new Date();
+            if(difference_In_Minutes > 10)
+            {
+                status.setCode("1");
+                status.setMessage("Expired OTP");
+            }
+            else {
+                status.setCode("0");
+                status.setMessage("Correct OTP");
+            }
 
 
             response.setStatus(status);
