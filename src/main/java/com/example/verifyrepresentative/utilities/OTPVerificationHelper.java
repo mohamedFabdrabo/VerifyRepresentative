@@ -32,8 +32,6 @@ public class OTPVerificationHelper {
                 status.setCode("0");
                 status.setMessage("Correct OTP");
             }
-
-
             response.setStatus(status);
             response.setResponseDate(date);
         } else {

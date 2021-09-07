@@ -152,7 +152,7 @@ public class VerifyRepresentativeService {
         Representative result = RepresentativeRepository.findByPhoneNumber(phone);
         if(result == null)
             throw new RecordNotFoundException("No Representative found for this number");
-        return RepresentativeRepository.findByPhoneNumber(phone);
+        return result;
     }
 
 
