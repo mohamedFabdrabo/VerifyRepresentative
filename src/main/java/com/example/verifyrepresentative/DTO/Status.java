@@ -1,4 +1,4 @@
-package com.example.verifyrepresentative.web;
+package com.example.verifyrepresentative.DTO;
 
 import java.io.Serializable;
 

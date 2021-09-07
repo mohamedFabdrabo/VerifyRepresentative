@@ -1,11 +1,12 @@
 package com.example.verifyrepresentative.service;
 
 import com.example.verifyrepresentative.exception.RecordNotFoundException;
+import com.example.verifyrepresentative.exception.SMSNotSentException;
 import com.example.verifyrepresentative.model.OTP;
 import com.example.verifyrepresentative.model.Representative;
 import com.example.verifyrepresentative.repository.OTPRepo;
 import com.example.verifyrepresentative.repository.RepresentativeRepo;
-import com.example.verifyrepresentative.web.ResponseDto;
+import com.example.verifyrepresentative.DTO.ResponseDto;
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -50,13 +51,13 @@ public class VerifyRepresentativeService {
         }
     }
     public OTP getRecentOTPForRepresentative(Representative entity) throws RecordNotFoundException {
-        List<OTP> OTPList = OTPRepository.findByRepresentative(entity);
         List<OTP> OTPListSorted = OTPRepository.findByRepresentativeOrderByRequestDate(entity);
 
-        if(OTPList.size() > 0) {
+        if(OTPListSorted.size() > 0) {
             return OTPListSorted.get(OTPListSorted.size()-1);
         } else {
-            throw new RecordNotFoundException("NO OTP Found for this Representative");
+            LOGGER.error("No OTP generated for this representative");
+            throw new RecordNotFoundException("NO OTP generated for this Representative");
         }
     }
     public Representative CreateRepresentative(Representative entity)
@@ -64,16 +65,7 @@ public class VerifyRepresentativeService {
         entity = RepresentativeRepository.save(entity);
         return entity;
     }
-    public OTP GenerateOTP(Representative entity)
-    {
-        int random_number = (int) (Math.random()*10000);
-        OTP new_otp = new OTP();
-        new_otp.setOtp(""+random_number);
-        new_otp.setRepresentative(entity);
-        new_otp.setRequestDate(new Date());
-        OTPRepository.save(new_otp);
-        return new_otp;
-    }
+
     public String generateOTP() {
         LOGGER.info("generating new OTP");
         int randomPin = (int) (Math.random() * 9000) + 1000;
@@ -81,28 +73,22 @@ public class VerifyRepresentativeService {
         LOGGER.info("New OTP value = " + otp);
         return otp;
     }
-        public ResponseDto<OTP> sendOtpToMobMerchant(String MobileNumber) throws RecordNotFoundException {
+        public ResponseDto<OTP> sendOtpToMobMerchant(String MobileNumber) throws RecordNotFoundException, SMSNotSentException {
 
             ResponseDto responseDto = new ResponseDto();
             String code = generateOTP();
             Representative salesRep = RepresentativeRepository.findByPhoneNumber(MobileNumber);
 
-            if (salesRep == null) {
-                responseDto.getStatus().setCode("404");
-                responseDto.getStatus().setMessage("PhoneNumberNotFound");
-                return responseDto;
-            }
+            if (salesRep == null)
+                throw new RecordNotFoundException("No representative found with this phone number");
 
-//            Representative oldSalesrep = salesRep.clone();
 
             boolean smsSent = sendSMS(salesRep.getPhoneNumber(), code);
             /*
             if (!smsSent) {
-                responseDto.getStatus().setCode("400");
-                responseDto.getStatus().setMessage("Server Error: MessageNotSent");
-                return responseDto;
-            }
-            */
+                throw new SMSNotSentException("Failed to Send SMS");
+            }*/
+
 
             OTP new_otp = new OTP();
             new_otp.setOtp(code);
@@ -151,11 +137,10 @@ public class VerifyRepresentativeService {
         }
 
         if (response == null || response.getStatusCode() != HttpStatus.OK || response.getBody() == null) {
-            LOGGER.error("Failed to send SMS ");
+            LOGGER.error("Failed to send SMS");
             return false;
         }
         return true;
-
     }
 
     public Representative getRepresentativeById(Long id)
@@ -163,8 +148,10 @@ public class VerifyRepresentativeService {
         return RepresentativeRepository.getById(id);
     }
     //public OTP getOTPByValue(String Value){return OTPRepository.findByOtp(Value);}
-    public Representative getRepresentativeByPhone(String phone)
-    {
+    public Representative getRepresentativeByPhone(String phone) throws RecordNotFoundException {
+        Representative result = RepresentativeRepository.findByPhoneNumber(phone);
+        if(result == null)
+            throw new RecordNotFoundException("No Representative found for this number");
         return RepresentativeRepository.findByPhoneNumber(phone);
     }
 

@@ -1,4 +1,4 @@
-package com.example.verifyrepresentative.web;
+package com.example.verifyrepresentative.DTO;
 
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;

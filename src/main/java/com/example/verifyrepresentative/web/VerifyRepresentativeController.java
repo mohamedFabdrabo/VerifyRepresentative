@@ -1,6 +1,10 @@
 package com.example.verifyrepresentative.web;
 
+import com.example.verifyrepresentative.DTO.InquiryRequestDTO;
+import com.example.verifyrepresentative.DTO.InquiryResponseDTO;
+import com.example.verifyrepresentative.DTO.ResponseDto;
 import com.example.verifyrepresentative.exception.RecordNotFoundException;
+import com.example.verifyrepresentative.exception.SMSNotSentException;
 import com.example.verifyrepresentative.model.OTP;
 import com.example.verifyrepresentative.model.Representative;
 import com.example.verifyrepresentative.service.VerifyRepresentativeService;
@@ -15,7 +19,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Date;
+import static com.example.verifyrepresentative.utilities.InquiryHelper.CreateResponse;
+import static com.example.verifyrepresentative.utilities.OTPVerificationHelper.verifyOTPHelper;
 
 @RestController
 @RequestMapping("/")
@@ -32,83 +37,21 @@ public class VerifyRepresentativeController {
     }
 
     @PostMapping("/generateOTP")
-    public ResponseEntity<InquiryResponseDTO> GenerateOTP(@RequestBody InquiryRequestDTO request) throws RecordNotFoundException
-    {
-        Representative representative = service.getRepresentativeByPhone(request.getServiceRefNumber());
-        if(representative==null)
-        {
-            logger.error("Invalid Generation : Phone number not found");
-            throw new RecordNotFoundException("Invalid Number");
-        }
-
+    public ResponseEntity<InquiryResponseDTO> GenerateOTP(@RequestBody InquiryRequestDTO request) throws RecordNotFoundException, SMSNotSentException {
         // Generates OTP and links OTP to representative in database
-        ResponseDto<OTP> smsresponse = service.sendOtpToMobMerchant(representative.getPhoneNumber());
-        if(smsresponse.getStatus().getCode().equals("400"))
-        {
-            logger.error("SMS Not : Phone number not found");
-            throw new RecordNotFoundException("Message Not Sent");
-        }
+        ResponseDto<OTP> smsresponse = service.sendOtpToMobMerchant(request.getServiceRefNumber());
         OTP new_otp = smsresponse.getData();
-
         // create Response
-        StatusDTO status = new StatusDTO();
-        status.setCode("0");
-        status.setMessage("GeneratedSuccessfully OTP: "+ new_otp.getOtp());
-        Date date = new Date();
-
-        InquiryResponseDTO response = new InquiryResponseDTO();
-        response.setStatus(status);
-        response.setResponseDate(date);
+        InquiryResponseDTO response = CreateResponse("0","OTP Generated Successfully OTP: "+ new_otp.getOtp());
         return new ResponseEntity<InquiryResponseDTO>(response, new HttpHeaders(), HttpStatus.OK);
     }
 
     @PostMapping("/verifyOTP")
     public ResponseEntity<InquiryResponseDTO> verifyOTP(@RequestBody InquiryRequestDTO request) throws RecordNotFoundException {
-        boolean success = false;
-        Representative representative = service.getRepresentativeByPhone(request.getServiceRefNumber());
-        if(representative==null)
-            throw new RecordNotFoundException("Invalid Number");
-
         String inputOTP = request.getInquiryAttributes().get(0).getValue();
+        Representative representative = service.getRepresentativeByPhone(request.getServiceRefNumber());
         OTP OTP = service.getRecentOTPForRepresentative(representative);
-        String ActualOTP = OTP.getOtp();
-        if(inputOTP.equals(ActualOTP))
-            success = true;
-
-        // create Response
-        InquiryResponseDTO response = new InquiryResponseDTO();
-        if(success)
-        {
-            Date d1 = OTP.getRequestDate();
-            Date d2 = new Date();
-            long difference_In_Time = d2.getTime() - d1.getTime();
-            long difference_In_Minutes = (difference_In_Time / (1000 * 60));
-
-            StatusDTO status = new StatusDTO();
-            Date date = new Date();
-            if(difference_In_Minutes > 10)
-            {
-                status.setCode("1");
-                status.setMessage("Expired OTP");
-            }
-            else {
-                status.setCode("0");
-                status.setMessage("Correct OTP");
-            }
-
-
-            response.setStatus(status);
-            response.setResponseDate(date);
-        }
-        else
-        {
-            StatusDTO status = new StatusDTO();
-            status.setCode("1");
-            status.setMessage("Wrong OTP");
-            Date date = new Date();
-            response.setStatus(status);
-            response.setResponseDate(date);
-        }
+        InquiryResponseDTO response = verifyOTPHelper(inputOTP, OTP);
         return new ResponseEntity<InquiryResponseDTO>(response, new HttpHeaders(), HttpStatus.OK);
     }
 

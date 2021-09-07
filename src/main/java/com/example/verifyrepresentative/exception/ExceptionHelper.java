@@ -1,7 +1,7 @@
 package com.example.verifyrepresentative.exception;
 
-import com.example.verifyrepresentative.web.InquiryResponseDTO;
-import com.example.verifyrepresentative.web.StatusDTO;
+import com.example.verifyrepresentative.DTO.InquiryResponseDTO;
+import com.example.verifyrepresentative.DTO.StatusDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
@@ -26,6 +26,18 @@ public class ExceptionHelper {
         response.setStatus(status);
         response.setResponseDate(date);
         logger.error("Record Not Found Exception: ",ex.getMessage());
+        return new ResponseEntity<InquiryResponseDTO>(response, new HttpHeaders(), HttpStatus.BAD_REQUEST);
+    }
+    @ExceptionHandler(value = { SMSNotSentException.class })
+    public ResponseEntity<InquiryResponseDTO> handleSMSNotSentException(RecordNotFoundException ex) {
+        StatusDTO status = new StatusDTO();
+        status.setCode("1");
+        status.setMessage("SMS Not Sent Exception: "+ex.getMessage());
+        Date date = new Date();
+        InquiryResponseDTO response = new InquiryResponseDTO();
+        response.setStatus(status);
+        response.setResponseDate(date);
+        logger.error("SMS Not Sent Exception: ",ex.getMessage());
         return new ResponseEntity<InquiryResponseDTO>(response, new HttpHeaders(), HttpStatus.BAD_REQUEST);
     }
 }
