@@ -7,7 +7,10 @@ import java.util.Date;
 @Table(name="OTP_TOKENS")
 public class OTP {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "OTP_SEQ")
+    @SequenceGenerator(sequenceName = "OTP_SEQ", allocationSize = 1, name = "OTP_SEQ")
+    @Basic(optional = false)
+    @Column(name = "ID")
     private Long id;
 
     @Column(name = "otp")

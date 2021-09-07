@@ -248,3 +248,233 @@ java.lang.IllegalStateException: Could not resolve parameter [0] in public org.s
 2021-09-07 10:10:28.884 DEBUG 5792 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [InquiryResponseDTO [status=StatusDTO [code=0, message=Correct OTP], responseDate=Tue Sep 07 10:10:28 (truncated)...]
 2021-09-07 10:10:28.885 DEBUG 5792 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
 2021-09-07 11:37:25.826  WARN 5792 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=18m48s671ms842µs300ns).
+2021-09-07 11:58:57.572  INFO 20556 --- [main] c.e.v.VerifyRepresentativeApplication    : Starting VerifyRepresentativeApplication using Java 16.0.2 on DESKTOP-A00PFDV with PID 20556 (C:\Users\Mohamed Fathy\IdeaProjects\VerifyRepresentative\target\classes started by Mohamed Fathy in C:\Users\Mohamed Fathy\IdeaProjects\VerifyRepresentative)
+2021-09-07 11:58:57.575  INFO 20556 --- [main] c.e.v.VerifyRepresentativeApplication    : The following profiles are active: prod
+2021-09-07 11:58:58.782  INFO 20556 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-09-07 11:58:58.782  INFO 20556 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-09-07 11:58:58.871  INFO 20556 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 74 ms. Found 2 JPA repository interfaces.
+2021-09-07 11:58:58.887  INFO 20556 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-09-07 11:58:58.888  INFO 20556 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-09-07 11:58:58.906  INFO 20556 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.verifyrepresentative.repository.OTPRepo. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-09-07 11:58:58.907  INFO 20556 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.verifyrepresentative.repository.RepresentativeRepo. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-09-07 11:58:58.907  INFO 20556 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2021-09-07 11:58:59.405  INFO 20556 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-09-07 11:58:59.413  INFO 20556 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-09-07 11:58:59.413  INFO 20556 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-09-07 11:58:59.532  INFO 20556 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-09-07 11:58:59.532  INFO 20556 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1879 ms
+2021-09-07 11:58:59.700  INFO 20556 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-09-07 11:58:59.747  INFO 20556 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-09-07 11:58:59.861  INFO 20556 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-09-07 11:58:59.961  INFO 20556 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-09-07 11:59:00.093  INFO 20556 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-09-07 11:59:00.105  INFO 20556 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-09-07 11:59:00.699  INFO 20556 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-09-07 11:59:00.709  INFO 20556 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-09-07 11:59:01.066  WARN 20556 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-09-07 11:59:01.173 DEBUG 20556 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-09-07 11:59:01.219 DEBUG 20556 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2021-09-07 11:59:01.247 DEBUG 20556 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-09-07 11:59:01.256 DEBUG 20556 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-09-07 11:59:01.637  INFO 20556 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-09-07 11:59:01.646  INFO 20556 --- [main] c.e.v.VerifyRepresentativeApplication    : Started VerifyRepresentativeApplication in 4.871 seconds (JVM running for 6.037)
+2021-09-07 11:59:07.691  INFO 20556 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-09-07 11:59:07.692  INFO 20556 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-09-07 11:59:07.692 DEBUG 20556 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2021-09-07 11:59:07.692 DEBUG 20556 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2021-09-07 11:59:07.692 DEBUG 20556 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2021-09-07 11:59:07.693 DEBUG 20556 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@5fd4e67f
+2021-09-07 11:59:07.694 DEBUG 20556 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@5059d398
+2021-09-07 11:59:07.694 DEBUG 20556 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2021-09-07 11:59:07.694  INFO 20556 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-09-07 11:59:07.703 DEBUG 20556 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/verifyOTP", parameters={}
+2021-09-07 11:59:07.706 DEBUG 20556 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.verifyrepresentative.web.VerifyRepresentativeController#verifyOTP(InquiryRequestDTO)
+2021-09-07 11:59:07.776 DEBUG 20556 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [InquiryRequestDTO{requestId='bde30cee-6f93-3a4a-947a-a24e7e274920', serviceRefNumber='01068693452',  (truncated)...]
+2021-09-07 11:59:07.948 DEBUG 20556 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-09-07 11:59:07.950 DEBUG 20556 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [InquiryResponseDTO [status=StatusDTO [code=1, message=Expired OTP], responseDate=Tue Sep 07 11:59:07 (truncated)...]
+2021-09-07 11:59:07.971 DEBUG 20556 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-09-07 11:59:10.743 DEBUG 20556 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/generateOTP", parameters={}
+2021-09-07 11:59:10.745 DEBUG 20556 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.verifyrepresentative.web.VerifyRepresentativeController#GenerateOTP(InquiryRequestDTO)
+2021-09-07 11:59:10.758 DEBUG 20556 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [InquiryRequestDTO{requestId='bde30cee-6f93-3a4a-947a-a24e7e274920', serviceRefNumber='01068693452',  (truncated)...]
+2021-09-07 11:59:10.762  INFO 20556 --- [http-nio-8080-exec-3] c.e.v.s.VerifyRepresentativeService      : generating new OTP
+2021-09-07 11:59:10.763  INFO 20556 --- [http-nio-8080-exec-3] c.e.v.s.VerifyRepresentativeService      : New OTP value = 8091
+2021-09-07 11:59:10.777  INFO 20556 --- [http-nio-8080-exec-3] c.e.v.s.VerifyRepresentativeService      : starting to send sms message to msisdn = 01068693452
+2021-09-07 11:59:10.811 DEBUG 20556 --- [http-nio-8080-exec-3] o.s.web.client.RestTemplate              : HTTP GET http://10.140.173.14:8181/aman/sms/send?msisdn=01068693452&msg=%D8%A7%D9%87%D9%84%D8%A7%20%D8%A8%D9%83%20%D9%81%D9%8A%20%D8%A7%D9%85%D8%A7%D9%86%20,%20%D9%83%D9%88%D8%AF%20%D8%A7%D9%84%D8%AA%D9%81%D8%B9%D9%8A%D9%84%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D8%A8%D9%83%208091&sender=AMAN
+2021-09-07 11:59:10.814 DEBUG 20556 --- [http-nio-8080-exec-3] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2021-09-07 11:59:31.823 ERROR 20556 --- [http-nio-8080-exec-3] c.e.v.s.VerifyRepresentativeService      : I/O error on GET request for "http://10.140.173.14:8181/aman/sms/send": Connection timed out: connect; nested exception is java.net.ConnectException: Connection timed out: connect
+2021-09-07 11:59:31.876  INFO 20556 --- [http-nio-8080-exec-3] c.e.v.s.VerifyRepresentativeService      : new OTP generated with value+:8091
+2021-09-07 11:59:31.877 DEBUG 20556 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-09-07 11:59:31.878 DEBUG 20556 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [InquiryResponseDTO [status=StatusDTO [code=0, message=OTP Generated Successfully OTP: 8091], respons (truncated)...]
+2021-09-07 11:59:31.879 DEBUG 20556 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-09-07 12:01:53.902 DEBUG 20556 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/verifyOTP", parameters={}
+2021-09-07 12:01:53.903 DEBUG 20556 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.verifyrepresentative.web.VerifyRepresentativeController#verifyOTP(InquiryRequestDTO)
+2021-09-07 12:01:53.905 DEBUG 20556 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [InquiryRequestDTO{requestId='bde30cee-6f93-3a4a-947a-a24e7e274920', serviceRefNumber='01068693452',  (truncated)...]
+2021-09-07 12:01:53.916 DEBUG 20556 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-09-07 12:01:53.917 DEBUG 20556 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [InquiryResponseDTO [status=StatusDTO [code=0, message=Correct OTP], responseDate=Tue Sep 07 12:01:53 (truncated)...]
+2021-09-07 12:01:53.918 DEBUG 20556 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-09-07 12:09:19.812 DEBUG 20556 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/generateOTP", parameters={}
+2021-09-07 12:09:19.813 DEBUG 20556 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.verifyrepresentative.web.VerifyRepresentativeController#GenerateOTP(InquiryRequestDTO)
+2021-09-07 12:09:19.815 DEBUG 20556 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [InquiryRequestDTO{requestId='bde30cee-6f93-3a4a-947a-a24e7e274920', serviceRefNumber='01068693452',  (truncated)...]
+2021-09-07 12:09:19.816  INFO 20556 --- [http-nio-8080-exec-9] c.e.v.s.VerifyRepresentativeService      : generating new OTP
+2021-09-07 12:09:19.816  INFO 20556 --- [http-nio-8080-exec-9] c.e.v.s.VerifyRepresentativeService      : New OTP value = 2033
+2021-09-07 12:09:19.821  INFO 20556 --- [http-nio-8080-exec-9] c.e.v.s.VerifyRepresentativeService      : starting to send sms message to msisdn = 01068693452
+2021-09-07 12:09:19.822 DEBUG 20556 --- [http-nio-8080-exec-9] o.s.web.client.RestTemplate              : HTTP GET http://10.140.173.14:8181/aman/sms/send?msisdn=01068693452&msg=%D8%A7%D9%87%D9%84%D8%A7%20%D8%A8%D9%83%20%D9%81%D9%8A%20%D8%A7%D9%85%D8%A7%D9%86%20,%20%D9%83%D9%88%D8%AF%20%D8%A7%D9%84%D8%AA%D9%81%D8%B9%D9%8A%D9%84%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D8%A8%D9%83%202033&sender=AMAN
+2021-09-07 12:09:19.823 DEBUG 20556 --- [http-nio-8080-exec-9] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2021-09-07 12:09:40.827 ERROR 20556 --- [http-nio-8080-exec-9] c.e.v.s.VerifyRepresentativeService      : I/O error on GET request for "http://10.140.173.14:8181/aman/sms/send": Connection timed out: connect; nested exception is java.net.ConnectException: Connection timed out: connect
+2021-09-07 12:09:40.840  INFO 20556 --- [http-nio-8080-exec-9] c.e.v.s.VerifyRepresentativeService      : new OTP generated with value+:2033
+2021-09-07 12:09:40.841 DEBUG 20556 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-09-07 12:09:40.841 DEBUG 20556 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [InquiryResponseDTO [status=StatusDTO [code=0, message=OTP Generated Successfully OTP: 2033], respons (truncated)...]
+2021-09-07 12:09:40.842 DEBUG 20556 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-09-07 12:10:07.620 DEBUG 20556 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : POST "/verifyOTP", parameters={}
+2021-09-07 12:10:07.620 DEBUG 20556 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.verifyrepresentative.web.VerifyRepresentativeController#verifyOTP(InquiryRequestDTO)
+2021-09-07 12:10:07.623 DEBUG 20556 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [InquiryRequestDTO{requestId='bde30cee-6f93-3a4a-947a-a24e7e274920', serviceRefNumber='01068693452',  (truncated)...]
+2021-09-07 12:10:07.628 DEBUG 20556 --- [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-09-07 12:10:07.628 DEBUG 20556 --- [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [InquiryResponseDTO [status=StatusDTO [code=1, message=Wrong OTP], responseDate=Tue Sep 07 12:10:07 E (truncated)...]
+2021-09-07 12:10:07.630 DEBUG 20556 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-09-07 12:10:13.316 DEBUG 20556 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/verifyOTP", parameters={}
+2021-09-07 12:10:13.317 DEBUG 20556 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.verifyrepresentative.web.VerifyRepresentativeController#verifyOTP(InquiryRequestDTO)
+2021-09-07 12:10:13.318 DEBUG 20556 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [InquiryRequestDTO{requestId='bde30cee-6f93-3a4a-947a-a24e7e274920', serviceRefNumber='01068693452',  (truncated)...]
+2021-09-07 12:10:13.322 DEBUG 20556 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-09-07 12:10:13.322 DEBUG 20556 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [InquiryResponseDTO [status=StatusDTO [code=0, message=Correct OTP], responseDate=Tue Sep 07 12:10:13 (truncated)...]
+2021-09-07 12:10:13.323 DEBUG 20556 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-09-07 12:11:34.877 DEBUG 20556 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/verifyOTP", parameters={}
+2021-09-07 12:11:34.877 DEBUG 20556 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.verifyrepresentative.web.VerifyRepresentativeController#verifyOTP(InquiryRequestDTO)
+2021-09-07 12:11:34.878 DEBUG 20556 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [InquiryRequestDTO{requestId='bde30cee-6f93-3a4a-947a-a24e7e274920', serviceRefNumber='01068693452',  (truncated)...]
+2021-09-07 12:11:34.884 DEBUG 20556 --- [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-09-07 12:11:34.884 DEBUG 20556 --- [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [InquiryResponseDTO [status=StatusDTO [code=0, message=Correct OTP], responseDate=Tue Sep 07 12:11:34 (truncated)...]
+2021-09-07 12:11:34.885 DEBUG 20556 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-09-07 12:11:42.166 DEBUG 20556 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/verifyOTP", parameters={}
+2021-09-07 12:11:42.167 DEBUG 20556 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.verifyrepresentative.web.VerifyRepresentativeController#verifyOTP(InquiryRequestDTO)
+2021-09-07 12:11:42.168 DEBUG 20556 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [InquiryRequestDTO{requestId='bde30cee-6f93-3a4a-947a-a24e7e274920', serviceRefNumber='01068693452',  (truncated)...]
+2021-09-07 12:11:42.173 DEBUG 20556 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-09-07 12:11:42.174 DEBUG 20556 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [InquiryResponseDTO [status=StatusDTO [code=1, message=Expired OTP], responseDate=Tue Sep 07 12:11:42 (truncated)...]
+2021-09-07 12:11:42.175 DEBUG 20556 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-09-07 12:18:14.082 DEBUG 20556 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/verifyOTP", parameters={}
+2021-09-07 12:18:14.083 DEBUG 20556 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.verifyrepresentative.web.VerifyRepresentativeController#verifyOTP(InquiryRequestDTO)
+2021-09-07 12:18:14.084 DEBUG 20556 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [InquiryRequestDTO{requestId='bde30cee-6f93-3a4a-947a-a24e7e274920', serviceRefNumber='01068693452',  (truncated)...]
+2021-09-07 12:18:14.091 DEBUG 20556 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-09-07 12:18:14.094 DEBUG 20556 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [InquiryResponseDTO [status=StatusDTO [code=1, message=Wrong OTP], responseDate=Tue Sep 07 12:18:14 E (truncated)...]
+2021-09-07 12:18:14.095 DEBUG 20556 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-09-07 12:18:21.557 DEBUG 20556 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/verifyOTP", parameters={}
+2021-09-07 12:18:21.558 DEBUG 20556 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.verifyrepresentative.web.VerifyRepresentativeController#verifyOTP(InquiryRequestDTO)
+2021-09-07 12:18:21.559 DEBUG 20556 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [InquiryRequestDTO{requestId='bde30cee-6f93-3a4a-947a-a24e7e274920', serviceRefNumber='01068693452',  (truncated)...]
+2021-09-07 12:18:21.566 DEBUG 20556 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Failed to complete request: java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+2021-09-07 12:18:21.573 ERROR 20556 --- [http-nio-8080-exec-9] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0] with root cause
+
+java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64) ~[na:na]
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70) ~[na:na]
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:266) ~[na:na]
+	at java.base/java.util.Objects.checkIndex(Objects.java:359) ~[na:na]
+	at java.base/java.util.ArrayList.get(ArrayList.java:427) ~[na:na]
+	at com.example.verifyrepresentative.web.VerifyRepresentativeController.verifyOTP(VerifyRepresentativeController.java:51) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1064) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) ~[tomcat-embed-core-9.0.52.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.9.jar:5.3.9]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.52.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+
+2021-09-07 12:18:21.577 DEBUG 20556 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for POST "/error", parameters={}
+2021-09-07 12:18:21.579 DEBUG 20556 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2021-09-07 12:18:21.613 DEBUG 20556 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-09-07 12:18:21.613 DEBUG 20556 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Sep 07 12:18:21 EET 2021, status=500, error=Internal Server Error, path=/verifyOTP}]
+2021-09-07 12:18:21.629 DEBUG 20556 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 500
+2021-09-07 12:20:28.050  INFO 20016 --- [main] c.e.v.VerifyRepresentativeApplication    : Starting VerifyRepresentativeApplication using Java 16.0.2 on DESKTOP-A00PFDV with PID 20016 (C:\Users\Mohamed Fathy\IdeaProjects\VerifyRepresentative\target\classes started by Mohamed Fathy in C:\Users\Mohamed Fathy\IdeaProjects\VerifyRepresentative)
+2021-09-07 12:20:28.053  INFO 20016 --- [main] c.e.v.VerifyRepresentativeApplication    : The following profiles are active: prod
+2021-09-07 12:20:28.921  INFO 20016 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-09-07 12:20:28.922  INFO 20016 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-09-07 12:20:28.989  INFO 20016 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 2 JPA repository interfaces.
+2021-09-07 12:20:29.004  INFO 20016 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-09-07 12:20:29.005  INFO 20016 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-09-07 12:20:29.019  INFO 20016 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.verifyrepresentative.repository.OTPRepo. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-09-07 12:20:29.020  INFO 20016 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.verifyrepresentative.repository.RepresentativeRepo. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-09-07 12:20:29.020  INFO 20016 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2021-09-07 12:20:29.431  INFO 20016 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-09-07 12:20:29.437  INFO 20016 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-09-07 12:20:29.437  INFO 20016 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-09-07 12:20:29.549  INFO 20016 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-09-07 12:20:29.549  INFO 20016 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1406 ms
+2021-09-07 12:20:29.699  INFO 20016 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-09-07 12:20:29.740  INFO 20016 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-09-07 12:20:29.839  INFO 20016 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-09-07 12:20:29.927  INFO 20016 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-09-07 12:20:30.033  INFO 20016 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-09-07 12:20:30.046  INFO 20016 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-09-07 12:20:30.599  INFO 20016 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-09-07 12:20:30.610  INFO 20016 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-09-07 12:20:30.931  WARN 20016 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-09-07 12:20:31.031 DEBUG 20016 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-09-07 12:20:31.075 DEBUG 20016 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2021-09-07 12:20:31.098 DEBUG 20016 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-09-07 12:20:31.106 DEBUG 20016 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-09-07 12:20:31.531  INFO 20016 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-09-07 12:20:31.545  INFO 20016 --- [main] c.e.v.VerifyRepresentativeApplication    : Started VerifyRepresentativeApplication in 4.096 seconds (JVM running for 5.07)
+2021-09-07 12:20:47.275  INFO 20016 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-09-07 12:20:47.276  INFO 20016 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-09-07 12:20:47.276 DEBUG 20016 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2021-09-07 12:20:47.276 DEBUG 20016 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2021-09-07 12:20:47.276 DEBUG 20016 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2021-09-07 12:20:47.277 DEBUG 20016 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@3abadb65
+2021-09-07 12:20:47.277 DEBUG 20016 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@77cf329d
+2021-09-07 12:20:47.278 DEBUG 20016 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2021-09-07 12:20:47.278  INFO 20016 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-09-07 12:20:47.287 DEBUG 20016 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/verifyOTP", parameters={}
+2021-09-07 12:20:47.291 DEBUG 20016 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.verifyrepresentative.web.VerifyRepresentativeController#verifyOTP(InquiryRequestDTO)
+2021-09-07 12:20:47.360 DEBUG 20016 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [InquiryRequestDTO{requestId='bde30cee-6f93-3a4a-947a-a24e7e274920', serviceRefNumber='01068693452',  (truncated)...]
+2021-09-07 12:20:47.368 DEBUG 20016 --- [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.example.verifyrepresentative.exception.ExceptionHelper#handleRecordNotFoundException(RecordNotFoundException)
+2021-09-07 12:20:47.369 ERROR 20016 --- [http-nio-8080-exec-2] c.e.v.exception.ExceptionHelper          : Record Not Found Exception: 
+2021-09-07 12:20:47.386 DEBUG 20016 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-09-07 12:20:47.387 DEBUG 20016 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [InquiryResponseDTO [status=StatusDTO [code=1, message=Record Not Found Exception: No OTP is provided (truncated)...]
+2021-09-07 12:20:47.403 DEBUG 20016 --- [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.example.verifyrepresentative.exception.RecordNotFoundException: No OTP is provided]
+2021-09-07 12:20:47.403 DEBUG 20016 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2021-09-07 12:20:55.594 DEBUG 20016 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/verifyOTP", parameters={}
+2021-09-07 12:20:55.595 DEBUG 20016 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.verifyrepresentative.web.VerifyRepresentativeController#verifyOTP(InquiryRequestDTO)
+2021-09-07 12:20:55.604 DEBUG 20016 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [InquiryRequestDTO{requestId='bde30cee-6f93-3a4a-947a-a24e7e274920', serviceRefNumber='01068693452',  (truncated)...]
+2021-09-07 12:20:55.736 DEBUG 20016 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-09-07 12:20:55.737 DEBUG 20016 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [InquiryResponseDTO [status=StatusDTO [code=1, message=Expired OTP], responseDate=Tue Sep 07 12:20:55 (truncated)...]
+2021-09-07 12:20:55.739 DEBUG 20016 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK

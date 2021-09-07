@@ -6,7 +6,10 @@ import javax.persistence.*;
 @Table(name="Representatives")
 public class Representative {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Rep_SEQ")
+    @SequenceGenerator(sequenceName = "Rep_SEQ", allocationSize = 1, name = "Rep_SEQ")
+    @Basic(optional = false)
+    @Column(name = "ID")
     private Long id;
 
     @Column(name="address")

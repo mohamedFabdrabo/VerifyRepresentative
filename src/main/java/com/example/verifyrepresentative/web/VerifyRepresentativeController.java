@@ -48,6 +48,8 @@ public class VerifyRepresentativeController {
 
     @PostMapping("/verifyOTP")
     public ResponseEntity<InquiryResponseDTO> verifyOTP(@RequestBody InquiryRequestDTO request) throws RecordNotFoundException {
+        if(request.getInquiryAttributes().size() == 0)
+            throw new RecordNotFoundException("No OTP is provided");
         String inputOTP = request.getInquiryAttributes().get(0).getValue();
         Representative representative = service.getRepresentativeByPhone(request.getServiceRefNumber());
         OTP OTP = service.getRecentOTPForRepresentative(representative);

@@ -51,10 +51,10 @@ public class VerifyRepresentativeService {
         }
     }
     public OTP getRecentOTPForRepresentative(Representative entity) throws RecordNotFoundException {
-        List<OTP> OTPListSorted = OTPRepository.findByRepresentativeOrderByRequestDate(entity);
+        OTP recent_otp = OTPRepository.findTopByRepresentativeOrderByRequestDateDesc(entity);
 
-        if(OTPListSorted.size() > 0) {
-            return OTPListSorted.get(OTPListSorted.size()-1);
+        if(recent_otp != null) {
+            return recent_otp;
         } else {
             LOGGER.error("No OTP generated for this representative");
             throw new RecordNotFoundException("NO OTP generated for this Representative");
